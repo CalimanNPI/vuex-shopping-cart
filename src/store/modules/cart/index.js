@@ -17,14 +17,16 @@ const actions = {
     });
   },
   addCartItem({ commit }, cartItem) {
+    console.log(cartItem), "add";
     axios.post("/api/cart", cartItem).then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
     });
   },
   removeCartItem({ commit }, cartItem) {
-    axios.delete("/api/cart/delete", cartItem).then((response) => {
+    console.log(cartItem, "delete 1");
+    axios.delete("/api/cart/delete", { data: cartItem }).then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
-    }); 
+    });
   },
   removeAllCartItems({ commit }) {
     axios.delete("/api/cart/delete/all").then((response) => {
@@ -49,11 +51,10 @@ const getters = {
   },
 };
 
-
 const cartModule = {
-    state,
-    mutations,
-    actions,
-    getters
-  }
-  export default cartModule;
+  state,
+  mutations,
+  actions,
+  getters,
+};
+export default cartModule;

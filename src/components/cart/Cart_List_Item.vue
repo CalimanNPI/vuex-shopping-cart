@@ -8,8 +8,8 @@
                 </span>
 
                 <span>
-                    <i class="fa fa-arrow-circle-up cart-item__modify" @click="addCartItem(cartItem)"></i>
-                    <i class="fa fa-arrow-circle-down cart-item__modify" @click="removeCartItem(cartItem)"></i>
+                    <button class="button is-primary" @click="addCartItem(cartItem)">+</button>
+                    <button class="button is-danger" @click="removeCartItem(cartItem)">-</button>
                 </span>
             </div>
 
@@ -22,10 +22,7 @@ export default {
     name: 'CartListItem',
     props: ['cartItem'],
     methods: {
-        ...mapActions([
-            'addCartItem',
-            'removeCartItem'
-        ])
+        ...mapActions(['addCartItem', 'removeCartItem'])
     }
 }
 </script>
