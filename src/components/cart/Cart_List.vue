@@ -20,7 +20,7 @@
             <br>
         </ul>
         <div class="buttons">
-            <button :disabled="!cartItems.length" class="button is-info">
+            <button @click="$router.push('/checkout')" :disabled="!cartItems.length" class="button is-info">
                 Checkout (<span class="has-text-weight-bold">${{ cartTotal }}</span>)
             </button>
 

@@ -17,13 +17,11 @@ const actions = {
     });
   },
   addCartItem({ commit }, cartItem) {
-    console.log(cartItem), "add";
     axios.post("/api/cart", cartItem).then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
     });
   },
   removeCartItem({ commit }, cartItem) {
-    console.log(cartItem, "delete 1");
     axios.delete("/api/cart/delete", { data: cartItem }).then((response) => {
       commit("UPDATE_CART_ITEMS", response.data);
     });

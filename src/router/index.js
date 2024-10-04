@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import CartList from '../components/cart/Cart_List.vue';
 import ProductList from '../components/product/Product_List.vue';
+import CheckOut from '../components/cart/Check_out.vue';
+import payout from '../components/cart/Pay_out.vue';
 
 const routes = [
   //{
@@ -12,6 +14,16 @@ const routes = [
   //  component: () =>
   //    import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   //},
+  {
+    path: "/payouts",
+    name: "payouts",
+    component: payout,
+  },
+  {
+    path: "/checkout",
+    name: "checkout",
+    component: CheckOut,
+  },
   {
     path: "/inventory",
     name: "hominventorye",
